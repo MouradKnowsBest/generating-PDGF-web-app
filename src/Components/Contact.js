@@ -4,10 +4,11 @@ import generatePDF from "./generatePDF";
 
 function Contact() {
   const userInfo = {
-    firstName: React.useRef(),
-    name: React.useRef(),
-    text: React.useRef(),
-    role: React.useRef(),
+    nexton: React.useRef(),
+    client: React.useRef(),
+    jobTitle: React.useRef(),
+    tjm: React.useRef(),
+    contractDuration: React.useRef(),
   };
 
   const handleSubmit = () => {
@@ -16,27 +17,34 @@ function Contact() {
     generatePDF(userInfo);
   };
 
-  return createContactDiv(
-    userInfo,
-    handleSubmit
-  );
+  return createContactDiv(userInfo, handleSubmit);
 }
 
-const handleSave = ({ myPDF, firstName, name }) => {
-  console.log(firstName.current.value, name.current.value);
+const handleSave = ({ myPDF}) => {
+  // console.log(firstName.current.value, name.current.value);
+  myPDF.save(`test.pdf`);
 
-  myPDF.save(`${firstName}_${name}.pdf`);
+  // myPDF.save(`${firstName}_${name}.pdf`);
 };
 
+
+
+
+
 function createContactDiv(userInfo, handleSubmit) {
+
+
+
   return (
     <div className="contact-div">
       <div className="user-info">
-        <h1>PRENOM</h1> <input ref={userInfo.firstName} />
-        <h1>NOM</h1> <input ref={userInfo.name} />
-        <h1>FONCTION</h1> <input ref={userInfo.role} />
+        <h1>nexton</h1>            <input ref={userInfo.nexton} />
+        <h1>client</h1>            <input ref={userInfo.client} />
+        <h1>jobTitle</h1>          <input ref={userInfo.jobTitle} />
+        <h1>tjm</h1>               <input ref={userInfo.tjm} />
+        <h1>contractDuration</h1>  <input ref={userInfo.contractDuration} />
       </div>
-      <div className="user-text">
+      {/* <div className="user-text">
         <h1>TEXT</h1>
 
         <textarea
@@ -48,7 +56,7 @@ function createContactDiv(userInfo, handleSubmit) {
         >
           {" "}
         </textarea>
-      </div>
+      </div> */}
 
       <div className="buttons">
         <button onClick={handleSubmit}>Show PDF</button>
