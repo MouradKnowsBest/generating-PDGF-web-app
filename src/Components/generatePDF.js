@@ -2,26 +2,26 @@ import jsPDF from "jspdf";
 
 export const myPDF = new jsPDF("p", "pt");
 
-function inWords (num) {
-    var a = ['','un ','deux ','trois ','quatre ', 'cinq ','six ','sept ','huit ','neuf ','dix ','onze ','douze ','treize ','quatorze ','quinze ','seize ','dix-sept ','dix-huit ','dix-neuf '];
-  var b = ['', '', 'vingt','trente','quarante','cinquante', 'soixante','soixante-dix','quatre-vingts','quatre-vingts-dix'];
+// function inWords (num) {
+//     var a = ['','un ','deux ','trois ','quatre ', 'cinq ','six ','sept ','huit ','neuf ','dix ','onze ','douze ','treize ','quatorze ','quinze ','seize ','dix-sept ','dix-huit ','dix-neuf '];
+//   var b = ['', '', 'vingt','trente','quarante','cinquante', 'soixante','soixante-dix','quatre-vingts','quatre-vingts-dix'];
   
-    if ((num = num.toString()).length > 9) return 'overflow';
-    const n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
-    if (!n) return; var str = '';
-    str += (n[1] !== 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'millions ' : '' ;
-    str += (n[2] !== 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'cent mille ' : '';
-    str += (n[3] !== 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'mille ' : '';
-    str += (n[4] !== 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'cent ' : '';
-    str += (n[5] !== 0) ? ((str !== '') ? 'et ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'euros ' : '';
-    return str;
-  }
+//     if ((num = num.toString()).length > 9) return 'overflow';
+//     const n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+//     if (!n) return; var str = '';
+//     str += (n[1] !== 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'millions ' : '' ;
+//     str += (n[2] !== 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'cent mille ' : '';
+//     str += (n[3] !== 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'mille ' : '';
+//     str += (n[4] !== 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'cent ' : '';
+//     str += (n[5] !== 0) ? ((str !== '') ? 'et ' : '') + (a[Number(n[5])] || b[n[5][0]] + ' ' + a[n[5][1]]) + 'euros ' : '';
+//     return str;
+//   }
   
 // var myPDF = new jsPDF('landscape'); // si on veut le doc en format paysage
 
 function generatePDF(userInfo) {
 
-inWords(Number(userInfo.tjm.current.value) * Number(userInfo.contractDuration.current.value) + ' euros')
+// inWords(Number(userInfo.tjm.current.value) * Number(userInfo.contractDuration.current.value) + ' euros')
   
   // console.log(inWords(125479))
 
@@ -56,9 +56,9 @@ inWords(Number(userInfo.tjm.current.value) * Number(userInfo.contractDuration.cu
 
   myPDF.text(150, 500, String(Number(userInfo.tjm.current.value) * Number(userInfo.contractDuration.current.value)) + ' euros');
 
-  const inEuros = inWords(Number(userInfo.tjm.current.value) * Number(userInfo.contractDuration.current.value) + ' euros');
-  console.log(inEuros)
-  myPDF.text(300, 500, inEuros);
+  // const inEuros = inWords(Number(userInfo.tjm.current.value) * Number(userInfo.contractDuration.current.value) + ' euros');
+  // console.log(inEuros)
+  // myPDF.text(300, 500, inEuros);
 
   // myPDF.addPage();// si y'a besoin de rajouter une page
 
