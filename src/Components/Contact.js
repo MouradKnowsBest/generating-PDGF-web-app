@@ -30,20 +30,26 @@ const handleSave = ({ myPDF }) => {
 function createContactDiv(userInfo, handleSubmit) {
   return (
     <div className="container">
-      <div className="form-container">
-        <div className="image-bg">
-          <img src="building.jpg" alt="" />
+      <div className="form">
+        <div className="image">
+          <img src="building.jpeg" alt="" />
         </div>
 
-        <form className="user-info">
+        <div className="user-info">
+        <form>
           <h1>Entrez les informations ... </h1>
-            <label><h2>nextone</h2></label>
-            <input ref={userInfo.nexton}/>
+          <label>
+            <h2>nextone</h2>
+          </label>
+          <input ref={userInfo.nexton} />
           <h2>Client</h2> <input ref={userInfo.client} />
           <h2>Titre</h2> <input ref={userInfo.jobTitle} />
           <h2>TJM</h2> <input ref={userInfo.tjm} />
           <h2>Durée du contrat</h2> <input ref={userInfo.contractDuration} />
         </form>
+        </div>
+
+
       </div>
 
       <div className="buttons">
