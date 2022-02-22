@@ -20,43 +20,31 @@ function Contact() {
   return createContactDiv(userInfo, handleSubmit);
 }
 
-const handleSave = ({ myPDF}) => {
+const handleSave = ({ myPDF }) => {
   // console.log(firstName.current.value, name.current.value);
   myPDF.save(`test.pdf`);
 
   // myPDF.save(`${firstName}_${name}.pdf`);
 };
 
-
-
-
-
 function createContactDiv(userInfo, handleSubmit) {
-
-
-
   return (
-    <div className="contact-div">
-      <div className="user-info">
-        <h1>nexton</h1>            <input ref={userInfo.nexton} />
-        <h1>client</h1>            <input ref={userInfo.client} />
-        <h1>jobTitle</h1>          <input ref={userInfo.jobTitle} />
-        <h1>tjm</h1>               <input ref={userInfo.tjm} />
-        <h1>contractDuration</h1>  <input ref={userInfo.contractDuration} />
-      </div>
-      {/* <div className="user-text">
-        <h1>TEXT</h1>
+    <div className="container">
+      <div className="form-container">
+        <div className="image-bg">
+          <img src="building.jpg" alt="" />
+        </div>
 
-        <textarea
-          ref={userInfo.text}
-          style={{ height: 250 }}
-          id="subject"
-          name="subject"
-          placeholder="Write something.."
-        >
-          {" "}
-        </textarea>
-      </div> */}
+        <form className="user-info">
+          <h1>Entrez les informations ... </h1>
+            <label><h2>nextone</h2></label>
+            <input ref={userInfo.nexton}/>
+          <h2>Client</h2> <input ref={userInfo.client} />
+          <h2>Titre</h2> <input ref={userInfo.jobTitle} />
+          <h2>TJM</h2> <input ref={userInfo.tjm} />
+          <h2>Durée du contrat</h2> <input ref={userInfo.contractDuration} />
+        </form>
+      </div>
 
       <div className="buttons">
         <button onClick={handleSubmit}>Show PDF</button>

@@ -1,16 +1,51 @@
 
 *{
-  background-color: rgb(99, 110, 179);
+  background-color: rgb(255, 255, 255);
+}
+
+
+.form-container{
+  display: flex;
+  width: 60vw;
+
+  color: white;
+  border-radius: 12px;
+  border: solid 1.5px rgba(5, 5, 5, 0.2);
+  align-items: center;
+
+}
+
+.image-bg{
+  flex:1;
+  border: solid 1.5px rgba(5, 5, 5, 0.2);
+  box-shadow: 0 10px 15px rgba(199, 122, 7, 0.2);
+  width:100%;
+  opacity: 0.2;
+  background-image: url("../../public/building.jpg");
+}
+
+.image-bg img{
+
+  width:100%;
 }
 
 .user-info{
-  display: flex;
-  justify-content:space-evenly
+  flex: 1;
+  display : grid;
+
+  border: solid 1.5px rgba(5, 5, 5, 0.2);
+  box-shadow: 0 10px 15px rgba(25, 201, 201, 0.2);
 }
-.contact-div{
-  background-color:rgb(99, 110, 179);
-  color: white;
+
+h1{
   
+  color: black;
+  font-size: 35px;
+}
+
+h2{
+  color: black;
+  font-size: 30px;
 }
 
 input, select, textarea{
@@ -29,13 +64,21 @@ input, select, textarea{
 }
 
 
+/* BUTTON  */
+
+.button {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
 .buttons button {
   color : rgb(99, 110, 179);
   padding : 10px;
   margin-right: 10px;
   background-color: white;
   font-size: 25px;
-  margin-left: 570px;
 
 }
 
