@@ -12,8 +12,6 @@ function Contact() {
   };
 
   const handleSubmit = () => {
-    // console.log(firstName.current.value, name.current.value);
-
     generatePDF(userInfo);
   };
 
@@ -21,43 +19,58 @@ function Contact() {
 }
 
 const handleSave = ({ myPDF }) => {
-  // console.log(firstName.current.value, name.current.value);
   myPDF.save(`test.pdf`);
-
-  // myPDF.save(`${firstName}_${name}.pdf`);
 };
 
 function createContactDiv(userInfo, handleSubmit) {
   return (
-    <div className="container">
-      <div className="form">
-        <div className="image">
-          <img src="building.jpeg" alt="" />
-        </div>
-
-        <div className="user-info">
-        <form>
-          <h1>Entrez les informations ... </h1>
-          <label>
-            <h2>nextone</h2>
-          </label>
-          <input ref={userInfo.nexton} />
-          <h2>Client</h2> <input ref={userInfo.client} />
-          <h2>Titre</h2> <input ref={userInfo.jobTitle} />
-          <h2>TJM</h2> <input ref={userInfo.tjm} />
-          <h2>Durée du contrat</h2> <input ref={userInfo.contractDuration} />
-        </form>
-        </div>
-
-
+    <>
+      <div className="banner">
+        <img src="logo-nexton.svg" alt="" />
+        <h1> NEXTON CONULTING </h1>
       </div>
 
-      <div className="buttons">
-        <button onClick={handleSubmit}>Show PDF</button>
+      <div className="container">
+        <div className="form-container">
+          <div className="image">
+            <img src="building.jpeg" alt="" />
+          </div>
 
-        <button onClick={handleSave}>Save PDF</button>
+          <div className="user-info">
+            <form>
+              <h1>Entrez les informations ... </h1>
+              {/* <h2>nextone</h2>
+            <input ref={userInfo.nexton} /> */}
+              <div className="first-row">
+                <h2>
+                  Client <input ref={userInfo.client} />
+                </h2>
+                <h2>
+                  Titre
+                  <input ref={userInfo.jobTitle} />
+                </h2>
+              </div>
+
+              <div className="second-row">
+                <h2>
+                  TJM
+                  <input ref={userInfo.tjm} />
+                </h2>
+                <h2>
+                  Durée du contrat (en jours)
+                  <input ref={userInfo.contractDuration} />
+                </h2>{" "}
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div className="buttons">
+          <button onClick={handleSubmit}>Générer le fichier PDF</button>
+          <button onClick={handleSave}>Save PDF</button>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

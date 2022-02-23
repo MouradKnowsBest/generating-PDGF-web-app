@@ -4,13 +4,20 @@
 }
 
 /* CONTAINER  */
-
-.container{
+.banner{
+  background-color: black;
 }
+.banner img{
+  width: 200px;
+}
+.container{
+  padding: 200px;
+}
+
 
 /* FORM  */
 
-.form{
+.form-container{
   display: flex;
   color: white;
   border-radius: 12px;
@@ -25,7 +32,6 @@
   opacity: 0.2;
   background-image: url("../../public/building.jpeg");
   background-color: green;
-
 }
 
 img{
@@ -35,38 +41,55 @@ img{
 
 
 .user-info{
-  flex: 4;
+  flex: 2;
   display : grid;
   width: 10px;
 
   border: solid 1.5px rgba(5, 5, 5, 0.2);
-  box-shadow: 0 10px 15px rgba(25, 201, 201, 0.2);
+  box-shadow: 0 10px 15px rgba(10, 175, 252, 0.2);
+  justify-content: center;
 }
 
+.first-row{
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.second-row{
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+}
+
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 h1{
+  font-family: "Poppins", sans-serif;
+
   color: black;
-  font-size: 5vh;
+  font-size: 3vh;
 }
 
 h2{
+  font-family: inherit;
+
   color: black;
-  font-size: 2.5vh;
+  font-size: 2vh;
 }
 
 input, select, textarea{
-  color: white;
-  font-size : 30px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8vh;
+
+  color: rgb(44, 44, 44);
   width: 200px;
   height: 30px;
   margin-top: 30px;
   border: 1px solid #ccc; /* Gray border */
-
 }
 
-.user-text h1 {
-  margin-left: 300px;
-  margin-top: 100px;
-}
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
@@ -79,19 +102,18 @@ input[type=text], select, textarea {
 
 /* BUTTONS  */
 
-.button {
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-}
-
 .buttons button {
-  color : rgb(99, 110, 179);
-  padding : 10px;
+  font-family: "Poppins", sans-serif;
+  color : rgb(44, 47, 66);
+  padding : 5px;
   margin-right: 10px;
   background-color: white;
   font-size: 25px;
+  border: solid 1.5px rgba(5, 5, 5, 0.2);
 
 }
 
-
+.buttons{
+  margin-top: 80px;
+  text-align: center;
+}
