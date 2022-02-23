@@ -1,16 +1,17 @@
-
-*{
-  background-color: rgb(255, 255, 255);
-}
+@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
 
 /* CONTAINER  */
 
-
 .container{
   padding: 120px;
-
+  width: 800px;
+  
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 /* FORM  */
 
@@ -20,27 +21,13 @@
   border: solid 1.5px rgba(5, 5, 5, 0.2);
   box-shadow: 0 6px 8px rgba(10, 175, 252, 0.2);
   align-items: center;
+  padding: 30px;
 }
-
-.image{
-  flex:1;
-  /* border: solid 1.5px rgba(5, 5, 5, 0.2);
-  box-shadow: 0 10px 15px rgba(199, 122, 7, 0.2); */
-  opacity: 0.2;
-  background-image: url("../../public/building.jpeg");
-  background-color: green;
-}
-
-img{
-  width:100%;
-  opacity: 0.1;
-}
-
 
 .user-info{
   flex: 2;
-
   justify-content: center;
+  margin-top: 20px;
 
 }
 
@@ -60,41 +47,7 @@ label {
   margin-left: 20px;
 
   width: 700px;
-  text-align: left;
 }
-
-input{
-  margin-right: 50px;
-}
-
-
-.first-row{
-  align-items: center;
-  width: 150px;
-  text-align: right;
-}
-
-.second-row{
-  width: 150px;
-  text-align: right;
-}
-
-@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
-h1{
-  font-family: "Poppins", sans-serif;
-
-  color: black;
-  font-size: 3vh;
-}
-
-h2{
-  font-family: inherit;
-
-  color: black;
-  font-size: 2vh;
-}
-
 
 input, select, textarea{
   font-family: "Poppins", sans-serif;
@@ -103,14 +56,22 @@ input, select, textarea{
   color: rgb(44, 44, 44);
   border: 1px solid #ccc; /* Gray border */
 }
+input::placeholder {
+  color: black; /*Change the placeholder color*/
+  opacity: 0.3; /*Change the opacity between 0 and 1*/
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
-    width: 75%; /* Full width */
+    width: 50%; /* Full width */
     border: 1px solid #ccc; /* Gray border */
     align-items: center;
-    margin-left: 300px;
+    margin-left: 5px;
     
 }
 

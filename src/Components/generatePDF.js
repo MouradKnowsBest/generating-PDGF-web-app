@@ -13,6 +13,7 @@ function generatePDF(userInfo) {
   var json = JSON.parse(myData);
   console.log(json["client"]);
   console.log(json["Total"]);
+  console.log(json["manager"]);
 
   return myData;
 }
@@ -23,34 +24,44 @@ function writeToPDF(userInfo) {
   myPDF.setFontSize(16);
 
   myPDF.setTextColor("#0F9AE5");
-  myPDF.text(20, 80, "Le Client: ");
+  myPDF.text(20, 80, "Le Manager: ");
   myPDF.setTextColor(0, 0, 0);
-  myPDF.text(90, 80, userInfo.client.current.value);
+  myPDF.text(115, 80, userInfo.manager.current.value);
 
   myPDF.setTextColor("#0F9AE5");
-  myPDF.text(20, 130, "Titre du poste: ");
+  myPDF.text(250, 80, "Le Consultant: ");
   myPDF.setTextColor(0, 0, 0);
-  myPDF.text(130, 130, userInfo.jobTitle.current.value);
+  myPDF.text(360, 80, userInfo.consultant.current.value);
+
+  myPDF.setTextColor("#0F9AE5");
+  myPDF.text(20, 130, "Le Client: ");
+  myPDF.setTextColor(0, 0, 0);
+  myPDF.text(90, 130, userInfo.client.current.value);
+  
+  myPDF.setTextColor("#0F9AE5");
+  myPDF.text(20, 180, "Titre du poste: ");
+  myPDF.setTextColor(0, 0, 0);
+  myPDF.text(130, 180, userInfo.jobTitle.current.value);
 
 
   myPDF.setTextColor("#0F9AE5");
-  myPDF.text(20, 180, "le TJM: ");
+  myPDF.text(20, 230, "le TJM: ");
   myPDF.setTextColor(0, 0, 0);
-  myPDF.text(75, 180, userInfo.tjm.current.value + " € H.T.");
+  myPDF.text(75, 230, userInfo.tjm.current.value + " € H.T.");
 
   myPDF.setTextColor("#0F9AE5");
-  myPDF.text(20, 230, "Durée du contrat (en jours): ");
+  myPDF.text(20, 280, "Durée du contrat (en jours): ");
   myPDF.setTextColor(0, 0, 0);
-  myPDF.text(220, 230, userInfo.contractDuration.current.value + " jours");
+  myPDF.text(220, 280, userInfo.contractDuration.current.value + " jours");
 
   myPDF.setTextColor("#0F9AE5");
-  myPDF.text(20, 280, "TOTAL: ");
+  myPDF.text(20, 330, "TOTAL: ");
   myPDF.setTextColor(0, 0, 0);
-  myPDF.text(80, 280, String(calculateTotal(userInfo)) + " euros hors taxes");
+  myPDF.text(80, 330, String(calculateTotal(userInfo)) + " euros hors taxes");
   
   myPDF.text(
     80,
-    305,
+    350,
     " (" + NumberToLetter(calculateTotal(userInfo)) + " euros hors taxes)"
   );
 
@@ -66,6 +77,8 @@ function calculateTotal(userInfo) {
 
 function saveDataAsJson(userInfo) {
   const data = {
+    manager: userInfo.manager.current.value,
+    consultant: userInfo.consultant.current.value,
     client: userInfo.client.current.value,
     jobTitle: userInfo.jobTitle.current.value,
     TJM: userInfo.tjm.current.value,
