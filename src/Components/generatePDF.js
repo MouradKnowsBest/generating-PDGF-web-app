@@ -37,12 +37,11 @@ function writeToPDF(userInfo) {
   myPDF.text(20, 130, "Le Client: ");
   myPDF.setTextColor(0, 0, 0);
   myPDF.text(90, 130, userInfo.client.current.value);
-  
+
   myPDF.setTextColor("#0F9AE5");
   myPDF.text(20, 180, "Titre du poste: ");
   myPDF.setTextColor(0, 0, 0);
   myPDF.text(130, 180, userInfo.jobTitle.current.value);
-
 
   myPDF.setTextColor("#0F9AE5");
   myPDF.text(20, 230, "le TJM: ");
@@ -58,7 +57,7 @@ function writeToPDF(userInfo) {
   myPDF.text(20, 330, "TOTAL: ");
   myPDF.setTextColor(0, 0, 0);
   myPDF.text(80, 330, String(calculateTotal(userInfo)) + " euros hors taxes");
-  
+
   myPDF.text(
     80,
     350,

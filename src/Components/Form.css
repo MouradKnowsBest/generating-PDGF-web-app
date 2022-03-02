@@ -6,7 +6,6 @@
 .container{
   padding: 120px;
   width: 800px;
-  
   align-items: center;
   justify-content: center;
   margin-left: auto;
@@ -14,6 +13,8 @@
 }
 
 /* FORM  */
+
+ 
 
 .form-container{
   display: flex;
@@ -28,7 +29,6 @@
   flex: 2;
   justify-content: center;
   margin-top: 20px;
-
 }
 
 .yo{
@@ -40,31 +40,26 @@ div {
 }
 label {
   font-family: "Poppins", sans-serif;
-
   color: black;
   font-size: 2.5vh;
-
   margin-left: 20px;
-
   width: 700px;
 }
 
-input, select, textarea{
+input[type=text], select, textarea {
   font-family: "Poppins", sans-serif;
   font-size: 1.8vh;
 
   color: rgb(44, 44, 44);
-  border: 1px solid #ccc; /* Gray border */
-}
-input::placeholder {
-  color: black; /*Change the placeholder color*/
-  opacity: 0.3; /*Change the opacity between 0 and 1*/
+  border: 1px solid rgb(204, 204, 204);
+  border: 1px solid rgb(204, 204, 204); 
+
+  width: 65%; 
+  margin-left: 5px;
+
   align-items: center;
-  justify-content: center;
   text-align: center;
 }
-
-
 
 /* Style inputs with type="text", select elements and textareas */
 input[type=text], select, textarea {
@@ -73,20 +68,27 @@ input[type=text], select, textarea {
     align-items: center;
     margin-left: 5px;
     text-align:center;
-
+}
+input::placeholder {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: black; 
+  opacity: 0.3; 
 }
 
 /* BUTTONS  */
 
 .buttons button {
   font-family: "Poppins", sans-serif;
-  color : rgb(44, 47, 66);
-  padding : 5px;
-  margin-right: 10px;
-  background-color: white;
   font-size: 25px;
-  border: solid 1.5px rgba(5, 5, 5, 0.2);
+  color : rgb(44, 47, 66);
+  background-color: white;
 
+  border: solid 1.5px rgba(5, 5, 5, 0.2);
+  margin-right: 10px;
+
+  padding : 5px;
 }
 
 .buttons{

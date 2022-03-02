@@ -31,7 +31,7 @@ function createFormDiv(userInfo, handleSubmit) {
                 <label>Manager</label>
                 <input
                   type="text"
-                  placeholder="Le manager"
+                  placeholder="Nom et prénom du manager"
                   ref={userInfo.manager}
                 />
               </div>
