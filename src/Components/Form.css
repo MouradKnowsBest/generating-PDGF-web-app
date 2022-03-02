@@ -72,7 +72,8 @@ input[type=text], select, textarea {
     border: 1px solid #ccc; /* Gray border */
     align-items: center;
     margin-left: 5px;
-    
+    text-align:center;
+
 }
 
 /* BUTTONS  */
